@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "../components/Hero";
 import Container from "../components/Container";
 import Row from "../components/Row";
-import Col from "../components/Col";
+import Col from "../components/Column";
 
 function About() {
   return (
@@ -26,10 +26,9 @@ function About() {
             <br></br>
             <p>Technologies Used for this project:</p>
             <ul>
-              <li>React</li>
-              <li>Axios</li>
-              <li>React Router DOM</li>
-              <li></li>
+              <li>React, Framework website is built on</li>
+              <li>Axios, to make an API call for the random "Employees"</li>
+              <li>React Router DOM, for the seperate pages</li>
             </ul>
             <br></br>
             <p className="ty"> Thank you for visiting. - Andrew Kessler</p>

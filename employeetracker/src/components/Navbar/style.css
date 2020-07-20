@@ -8,3 +8,12 @@ nav.navbar.navbar-default {
 .nav-link, .navbar-brand { 
   color: #E5E5E5;
 }
+
+.search-div { 
+  margin-left: auto;
+}
+
+.btn { 
+  background-color: lightgrey;
+  margin: 5px;
+}

@@ -11,7 +11,6 @@ function Navbar() {
       </Link>
       <div>
         <ul className="navbar-nav">
-
           <li className="nav-item">
             <Link
               to="/"
@@ -24,7 +23,6 @@ function Navbar() {
               About
             </Link>
           </li>
-
           <li className="nav-item search">
             <Link
               to="/all"
@@ -33,17 +31,21 @@ function Navbar() {
               All Employees
             </Link>
           </li>
-
-          <li className="nav-item search">
-            <Link
-              to="/search"
-              className={window.location.pathname === "/search" ? "nav-link active" : "nav-link"}
-            >
-              Search
-            </Link>
-          </li>
-
         </ul>
+      </div>
+      <div className="search-div">
+        <form className="search-form form-inline my-2 my-lg-0">
+          <div className="form-group ">
+
+            <input />
+
+            <button type="submit" className="btn">
+              Search
+        </button>
+          </div>
+        </form>
+
+
       </div>
     </nav>
   );
