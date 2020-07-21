@@ -68,7 +68,8 @@ class AllEmp extends Component {
         <h1 className="text-center">Kessler Corp Employees</h1>
         <form className="search-form form-inline">
           <div>
-            <input className = "employeeSearch" placeholder="Enter an Employee's First Name. "  onChange = {this.handelSearchFN} />
+            <input className = "employeeSearch" placeholder="Search by Employee's First Name. "  onChange = {this.handelSearchFN} />
+            <input className = "employeeSearch" placeholder="Search by Employee's Last Name. "  onChange = {this.handelSearchLN} />
           </div>
         </form>
         <Container>
