@@ -4,6 +4,7 @@ import Card from "../components/Card";
 import Row from "../components/Row"
 import Container from "../components/Container"
 import Column from "../components/Column"
+import "./styles.css";
 
 
 class AllEmp extends Component {
@@ -23,33 +24,33 @@ class AllEmp extends Component {
     });
   }
 
- 
-
-  handelSearch = (event) => {
-    const query = event.target.value;
-    this.sortPeopleFN(query);
-    // this.sortPeopleLN(query);
-    // this.sortPeopleAge(query)
+  handelSearchFN = (event) => {
+    const queryFN = event.target.value;
+    this.sortPeopleFN(queryFN);
+  }
+  handelSearchLN = (event) => {
+    const queryLN = event.target.value;
+    this.sortPeopleLN(queryLN);
   }
 
    //funtion to sort by first name 
   sortPeopleFN = (value) => {
     let searchResults = this.state.allResults.filter((x) => { 
-      return x.name.first.includes(value)
+      return x.name.first.toLowerCase().includes(value);
     }) 
     this.setState({
       allResultsParsed: searchResults
     })
   }
-  // //function to sort by last name 
-  // sortPeopleLN = (value) => {
-  //   let searchResults = this.state.allResults.filter((x) => { 
-  //     return x.name.last.includes(value)
-  //   }) 
-  //   this.setState({
-  //     allResultsParsed: searchResults
-  //   })
-  // }
+  //function to sort by last name 
+  sortPeopleLN = (value) => {
+    let searchResults = this.state.allResults.filter((x) => { 
+      return x.name.last.toLowerCase().includes(value)
+    }) 
+    this.setState({
+      allResultsParsed: searchResults
+    })
+  }
   //function to sort people by Age 
   // sortPeopleAge = (value) => {
   //   let searchResults = this.state.allResults.filter((x) => { 
@@ -62,15 +63,12 @@ class AllEmp extends Component {
   
   render() {
     const results = this.state.allResultsParsed;
-    console.log(results)
     return (
       <div>
         <h1 className="text-center">Kessler Corp Employees</h1>
-        <form className="search-form form-inline my-2 my-lg-0">
-          <div className="form-group ">
-
-            <input className = "employeeSearch" placeholder="Search for an Employee"  onChange = {this.handelSearch} />
-
+        <form className="search-form form-inline">
+          <div>
+            <input className = "employeeSearch" placeholder="Enter an Employee's First Name. "  onChange = {this.handelSearchFN} />
           </div>
         </form>
         <Container>
