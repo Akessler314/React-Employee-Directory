@@ -34,18 +34,7 @@ function Navbar() {
         </ul>
       </div>
       <div className="search-div">
-        <form className="search-form form-inline my-2 my-lg-0">
-          <div className="form-group ">
-
-            <input />
-
-            <button type="submit" className="btn">
-              Search
-        </button>
-          </div>
-        </form>
-
-
+        
       </div>
     </nav>
   );
