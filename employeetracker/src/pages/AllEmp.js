@@ -27,11 +27,13 @@ class AllEmp extends Component {
 
   handelSearch = (event) => {
     const query = event.target.value;
-    this.sortpeople(query)
- 
+    this.sortPeopleFN(query);
+    // this.sortPeopleLN(query);
+    // this.sortPeopleAge(query)
   }
 
-  sortpeople = (value) => {
+   //funtion to sort by first name 
+  sortPeopleFN = (value) => {
     let searchResults = this.state.allResults.filter((x) => { 
       return x.name.first.includes(value)
     }) 
@@ -39,7 +41,25 @@ class AllEmp extends Component {
       allResultsParsed: searchResults
     })
   }
-
+  // //function to sort by last name 
+  // sortPeopleLN = (value) => {
+  //   let searchResults = this.state.allResults.filter((x) => { 
+  //     return x.name.last.includes(value)
+  //   }) 
+  //   this.setState({
+  //     allResultsParsed: searchResults
+  //   })
+  // }
+  //function to sort people by Age 
+  // sortPeopleAge = (value) => {
+  //   let searchResults = this.state.allResults.filter((x) => { 
+  //     return x.dob.age.includes(value)
+  //   }) 
+  //   this.setState({
+  //     allResultsParsed: searchResults
+  //   })
+  // }
+  
   render() {
     const results = this.state.allResultsParsed;
     console.log(results)
@@ -49,11 +69,8 @@ class AllEmp extends Component {
         <form className="search-form form-inline my-2 my-lg-0">
           <div className="form-group ">
 
-            <input className = "employeeSearch" onChange = {this.handelSearch} />
+            <input className = "employeeSearch" placeholder="Search for an Employee"  onChange = {this.handelSearch} />
 
-            <button type="submit" className="btn">
-              Search
-        </button>
           </div>
         </form>
         <Container>
